@@ -1,0 +1,8 @@
+.container
+  .page-header
+    %h1= t('welcome.title')
+
+  %p= t('welcome.description')
+
+  %p= button_to t('button.get_started'), {},
+    {method: :get, class: 'btn btn-default'}
