@@ -5,5 +5,8 @@ en:
   welcome:
     title: "Diaspberry Wizard"
     description: "Welcome to the Diaspberry Installation Wizard!"
+  updater:
+    description: "Let's update diaspora to it's latest version, first!"
   button:
+    next: "Next"
     get_started: "Get Started"

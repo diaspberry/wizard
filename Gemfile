@@ -13,3 +13,5 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 
 gem 'haml-rails'
+gem 'simple-rss'
+gem 'git'

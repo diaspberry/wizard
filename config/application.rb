@@ -22,5 +22,11 @@ module Wizard
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    config.diaspora = {
+      version: '0.5.10.1',
+      directory: "~/workspace/diaspora",
+      atomfeed: "https://github.com/diaspora/diaspora/tags.atom"
+    }
   end
 end

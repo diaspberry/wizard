@@ -4,5 +4,5 @@
 
   %p= t('welcome.description')
 
-  %p= button_to t('button.get_started'), {},
+  %p= button_to t('button.get_started'), updater_index_path,
     {method: :get, class: 'btn btn-default'}

@@ -1,0 +1,12 @@
+.container
+  .page-header
+    %h1= t('welcome.title')
+
+  %p= t('updater.description')
+
+  .spinner
+
+  %p= button_to t('button.next'), '/',
+    {method: :get, class: 'btn btn-default'}
+
+= javascript_include_tag :updater
