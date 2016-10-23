@@ -2,7 +2,7 @@ module UpdaterHelper
   require 'open-uri'
 
   # @return version number or nil
-  def getLatestDiasporaVersion
+  def latest_diaspora_version
     dir = Rails.application.config.diaspora[:directory]
     feed = Rails.application.config.diaspora[:atomfeed]
     rss = SimpleRSS.parse open(feed)

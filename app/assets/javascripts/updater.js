@@ -20,23 +20,42 @@
 $(document).ajaxStart(function() {
   $(".spinner").fadeIn('slow');
 });
+$(document).ajaxStop(function() {
+  $(".spinner").hide();
+});
 
 $.ajax({
-  method: 'POST',
-  url: "/updater",
+  method: 'get',
+  url: '/updater/check',
   success: function(data) {
     console.debug(data);
+
     if (data.update) {
-      $('input').attr({
-        class: 'btn btn-danger',
-        value: 'Update to v' + data.version
+      $('#update').attr({
+        class: 'btn btn-success',
+        value: $('#update').val() + data.version,
       });
+      $('#update').fadeIn('slow');
+    } else {
+      $('#next').fadeIn('slow');
     }
   },
   error: function(data) {
     console.debug(data);
-  },
-  complete: function() {
-    $(".spinner").hide();
+    $('#next').fadeIn('slow');
   }
+});
+
+$('#update').click(function() {
+  $.ajax({
+    method: 'post',
+    url: '/updater/run',
+    success: function(data) {
+      $('#next').fadeIn('slow');
+      $('#update').hide();
+    },
+    error: function(data) {
+      // TODO what happens if the update fails
+    }
+  });
 });

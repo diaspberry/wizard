@@ -2,11 +2,17 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  project: "Diaspberry"
   welcome:
-    title: "Diaspberry Wizard"
-    description: "Welcome to the Diaspberry Installation Wizard!"
+    title: "%{project} Wizard"
+    description: "Welcome to the %{project} Installation Wizard!"
   updater:
+    title: "%{project} Updater"
     description: "Let's update diaspora to it's latest version, first!"
+    empty_log: "The update log is empty!"
   button:
     next: "Next"
+    update: "Update to v"
     get_started: "Get Started"
+  configuration:
+    description: "Before we can start we need some configuration, first!"
