@@ -18,12 +18,9 @@
 class UpdaterController < ApplicationController
   include UpdaterHelper
 
-  def index
-  end
-
-  def create
-    version = Gem::Version.new(getLatestDiasporaVersion)
+  def check
     git = Rails.application.config.diaspora[:git]
+    version = Gem::Version.new(latest_diaspora_version)
     installed = git.tags.last.name.sub(/^v/, '')
 
     if version > Gem::Version.new(installed)
@@ -31,5 +28,10 @@ class UpdaterController < ApplicationController
     else
       render json: {update: false}
     end
+  end
+
+  def update
+    UpdaterJob.perform_now
+    render :index
   end
 end

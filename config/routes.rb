@@ -5,7 +5,13 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'application#show'
 
-  resources :updater
+  resources :updater do
+    collection do
+      get 'check'
+      post 'run'
+    end
+  end
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
