@@ -1,8 +1,8 @@
 .container
   .page-header
-    %h1= t('welcome.title')
+    %h1= t('welcome.title', project: t('project'))
 
-  %p= t('welcome.description')
+  %p= t('welcome.description', project: t('project'))
 
   %p= button_to t('button.get_started'), updater_index_path,
     {method: :get, class: 'btn btn-default'}
