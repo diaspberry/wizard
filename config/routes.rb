@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :configuration
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
